@@ -32,7 +32,7 @@ const FloatingMenu = () => {
                     right: '25px',
                     width: '60px',
                     height: '60px',
-                    backgroundColor: '#0d6e',
+                    backgroundColor: 'black',
                     zIndex: 1050,
                     cursor: 'pointer',
                     display: 'flex',
@@ -41,7 +41,7 @@ const FloatingMenu = () => {
                 }}
                 onClick={toggleMenu}
             >
-                <i className="bi bi-menu-up text-white fs-1"></i>
+                <i className="bi bi-list text-white fs-1"></i>
             </button>
 
             {/* Modal que actúa como menú lateral */}
