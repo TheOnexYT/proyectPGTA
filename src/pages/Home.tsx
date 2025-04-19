@@ -1,2 +1,13 @@
-const Home: React.FC = () => <h1>Bienvenido a la página principal</h1>;
-export default Home;
+import FloatingMenu from '../components/FloatingMenu'
+
+export const Home = () => {
+  return (
+    <div>
+            <>
+      {/* Tus rutas y otros componentes */}
+      <FloatingMenu />
+    </>
+    </div>
+  )
+}
+
