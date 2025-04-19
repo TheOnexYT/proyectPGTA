@@ -6,8 +6,7 @@ const Login = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría tu lógica de login real
-    navigate('/dashboard');
+    navigate('/home');
   };
 
   return (
