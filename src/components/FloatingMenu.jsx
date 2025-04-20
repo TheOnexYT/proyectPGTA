@@ -6,17 +6,13 @@ import { menuItems } from '../utilities/maps/itemsModalMenuHome';
 const FloatingMenu = () => {
     const { isOpen, toggleMenu } = useMenuStore();
 
-    // Estado para manejar el modal secundario (sub-menú)
     const [showSubMenu, setShowSubMenu] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
 
-    // Función para manejar los clics
     const handleMenuItemClick = (item) => {
         if (item.tipo === 'link') {
-            // Redirigir si es un link
             window.location.href = item.url;
         } else if (item.tipo === 'modal') {
-            // Mostrar submenú si es un modal
             setSelectedItem(item);
             setShowSubMenu(true);
         }
@@ -47,7 +43,7 @@ const FloatingMenu = () => {
                 <i className="bi bi-house-gear text-white fs-2"></i>
             </button>
 
-            {/* Modal que actúa como menú lateral */}
+            {/* Modal principal (menú lateral) */}
             <Modal
                 show={isOpen}
                 onHide={toggleMenu}
@@ -55,8 +51,16 @@ const FloatingMenu = () => {
                 contentClassName="rounded-4"
                 backdropClassName="modal-backdrop-transparent"
             >
-                <Modal.Body className="p-1">
-                    <div className="p-4" style={{ minHeight: '80vh' }}>
+                <Modal.Body className="p-1 position-relative">
+                    {/* Botón cerrar superior derecho */}
+                    <i
+                        className="bi bi-x fs-3 text-danger position-absolute"
+                        style={{ top: '10px', right: '15px', cursor: 'pointer', zIndex: 1051 }}
+                        onClick={toggleMenu}
+                        title="Cerrar"
+                    ></i>
+
+                    <div className="p-4 pt-5" style={{ minHeight: '80vh' }}>
                         <div className="row text-center">
                             {menuItems.map((item, index) => (
                                 <div className="col-6 justify-content-center p-2" key={index}>
@@ -74,7 +78,7 @@ const FloatingMenu = () => {
                 </Modal.Body>
             </Modal>
 
-            {/* Modal secundario para los elementos tipo "modal" */}
+            {/* Submodal (cuando un item tiene subItems) */}
             {showSubMenu && selectedItem && (
                 <Modal
                     show={showSubMenu}
@@ -83,14 +87,24 @@ const FloatingMenu = () => {
                     contentClassName="rounded-4"
                     backdropClassName="modal-backdrop-transparent"
                 >
-                    <Modal.Body className="p-1">
-                        <div className="p-4" style={{ minHeight: '60vh' }}>
+                    <Modal.Body className="p-1 position-relative">
+                        {/* Botón cerrar del submodal */}
+                        <i
+                            className="bi bi-x fs-3 text-danger position-absolute"
+                            style={{ top: '10px', right: '15px', cursor: 'pointer', zIndex: 1051 }}
+                            onClick={() => setShowSubMenu(false)}
+                            title="Cerrar"
+                        ></i>
+
+                        <div className="p-4 pt-5" style={{ minHeight: '60vh' }}>
                             <h4 className="text-center mb-4">{selectedItem.nombre}</h4>
                             <div className="row justify-content-center flex-wrap">
                                 {selectedItem.subItems.map((subItem, index) => (
                                     <div className="col-4 justify-content-center align-items-center m-1 p-1" key={index}>
-                                        <button className="btn w-100 d-flex flex-column align-items-center justify-content-center"
-                                        onClick={() => handleMenuItemClick(subItem)}>
+                                        <button
+                                            className="btn w-100 d-flex flex-column align-items-center justify-content-center"
+                                            onClick={() => handleMenuItemClick(subItem)}
+                                        >
                                             <i className={`bi ${subItem.icono} fs-4 mb-1`}></i>
                                             <span>{subItem.nombre}</span>
                                         </button>

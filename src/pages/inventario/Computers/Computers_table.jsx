@@ -34,7 +34,7 @@ const rows = [
   createData(3, 'Servidor', 'Entidad 3', 'Activo', 'Fabricante C', '11223', 'Server', 'Modelo Z', 'Windows Server', 'Data Center', '2023-03-01', 'Intel Xeon'),
   createData(4, 'Workstation', 'Entidad 4', 'Mantenimiento', 'Fabricante D', '44556', 'Workstation', 'Modelo W', 'macOS', 'Oficina 3', '2023-04-01', 'Apple M1'),
   createData(5, 'PC de oficina', 'Entidad 5', 'Activo', 'Fabricante E', '78901', 'Desktop', 'Modelo V', 'Windows 11', 'Oficina 4', '2023-05-01', 'Intel i5'),
-  createData(6, 'Laptop de trabajo', 'Entidad 6', 'Inactivo', 'Fabricante F', '23456', 'Laptop', 'Modelo U', 'Linux Mint', 'Oficina 5', '2023-06-01', 'Intel i3'),
+  createData(14, 'Laptop de trabajo', 'Entidad 6', 'Inactivo', 'Fabricante F', '23456', 'Laptop', 'Modelo U', 'Linux Mint', 'Oficina 5', '2023-06-01', 'Intel i3'),
   createData(1, 'PC gamer', 'Entidad 1', 'Activo', 'Fabricante A', '12345', 'Desktop', 'Modelo X', 'Windows 10', 'Oficina 1', '2023-01-01', 'Intel i7'),
   createData(2, 'Laptop', 'Entidad 2', 'Inactivo', 'Fabricante B', '67890', 'Laptop', 'Modelo Y', 'Ubuntu', 'Oficina 2', '2023-02-01', 'AMD Ryzen 5'),
   createData(3, 'Servidor', 'Entidad 3', 'Activo', 'Fabricante C', '11223', 'Server', 'Modelo Z', 'Windows Server', 'Data Center', '2023-03-01', 'Intel Xeon'),

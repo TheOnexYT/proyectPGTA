@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import ComputersTable from './ComputersTable';
+import MonitoresTable from './MonitoresTable';
 
-export const Computers = () => {
+export const Monitores = () => {
   const navigate = useNavigate();
 
   return (
@@ -19,18 +19,18 @@ export const Computers = () => {
 
       {/* Título de la sección */}
       <div className="text-center mb-4">
-        <h2 className="fw-bold">📊 Gestión de Equipos de Cómputo</h2>
-        <p className="text-muted">Consulta, edita y organiza la información de los computadores registrados.</p>
+        <h2 className="fw-bold">🖥️ Gestión de Equipos de Monitores</h2>
+        <p className="text-muted">Consulta, edita y organiza la información de los Monitores registrados.</p>
       </div>
 
       {/* Card contenedora para estilo moderno */}
       <div className="card shadow-sm border-0 rounded-4">
         <div className="card-body">
-          <ComputersTable />
+          <MonitoresTable />
         </div>
       </div>
     </section>
   );
 };
 
-export default Computers;
+export default Monitores;
