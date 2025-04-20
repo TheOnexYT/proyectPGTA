@@ -19,9 +19,13 @@ const App = () => {
         />
         <Route path="/computers"
           element={
+<<<<<<< HEAD
 
             <Computers />
 
+=======
+              <Computers />
+>>>>>>> origin/juansedev
           }
         />
       </Routes>

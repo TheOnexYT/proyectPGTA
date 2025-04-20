@@ -1,0 +1,63 @@
+body {
+    background-color: #f6f8fb; /* o #f5f5f5, un gris clarito */
+  }
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    /* ajustá este valor si querés más o menos separación */
+}
+
+.logo-img {
+    max-height: 150px;
+    /* aumentalo si lo querés más grande, tipo 150 o 200 */
+    width: auto;
+}
+
+.shadowCard{
+    box-shadow: 0 6px 6px #8BC34A; /* sombra color gotty */
+    border: none;
+  }
+  
+
+.form-group {
+    margin-bottom: 1.8rem;
+    /* más espacio entre inputs */
+}
+
+.form-control {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1.8rem;
+}
+
+.custom-btn {
+    padding: 12px 0;
+    font-size: 1rem;
+    background: linear-gradient(to right, #8BC34A, #3F51B5);
+    /* ITNetGROUP vibes */
+    color: white;
+    border: none;
+    transition: 0.3s ease;
+    border-radius: 6px;
+}
+
+.custom-btn:hover {
+    opacity: 0.9;
+}
+
+.support-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 1.5rem;
+}
