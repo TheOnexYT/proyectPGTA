@@ -1,12 +1,12 @@
 // hooks/useAuth.ts
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../services/authService';
-import { useAuthContext } from '../context/AuthContext';
+import { useAuthStore } from '../stores/useAuthStore';
 
 // hooks/useAuth.ts
 export const useAuth = () => {
     const navigate = useNavigate();
-    const { login } = useAuthContext();
+    const { login } = useAuthStore();
   
     const handleLogin = async (email: string, password: string) => {
       try {
