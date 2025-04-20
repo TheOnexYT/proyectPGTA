@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login/Login';
+import Login from './pages/login/Login';
 import { Home } from './pages/Home';
 import ProtectedRoute from './components/ProtectedRoute';
+import Computers from './pages/inventario/Computers/Computers';
 
 const App = () => {
   return (
@@ -14,6 +15,11 @@ const App = () => {
             <ProtectedRoute>
               <Home />
             </ProtectedRoute>
+          }
+        />
+        <Route path="/computers"
+          element={
+              <Computers />
           }
         />
       </Routes>
