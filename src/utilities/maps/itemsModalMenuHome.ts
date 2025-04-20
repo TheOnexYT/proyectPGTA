@@ -4,26 +4,22 @@ export const menuItems = [
         icono: 'bi-house', 
         tipo: 'modal', 
         subItems: [
-            { nombre: 'Añadir usuario', icono: 'bi-person-plus' },
-            { nombre: 'Ver usuarios', icono: 'bi-person-lines-fill' },
-            { nombre: 'Modificar usuario', icono: 'bi-pencil' },
-            { nombre: 'Computers', icono: 'bi-laptop' },
-            { nombre: 'Monitores', icono: 'bi-display' },
-            { nombre: 'Programas', icono: 'bi-file-earmark-code' },
-            { nombre: 'Network Devices', icono: 'bi-router' },
-            { nombre: 'Peripherals', icono: 'bi-usb-drive' },
-            { nombre: 'Printers', icono: 'bi-printer' },
-            { nombre: 'Consumibles', icono: 'bi-currency-dollar' },
-            { nombre: 'Phones', icono: 'bi-phone' },
-            { nombre: 'Racks', icono: 'bi-hdd' },
-            { nombre: 'Enclosures', icono: 'bi-house-door' },
-            { nombre: 'PDUs', icono: 'bi-plug' },
-            { nombre: 'Passive Devices', icono: 'bi-toggle-off' },
-            { nombre: 'Cables', icono: 'bi-plug' },
-            { nombre: 'Tarjetas SIM', icono: 'bi-sim' },
-            { nombre: 'Global', icono: 'bi-globe' }
+            { nombre: 'Computers', icono: 'bi-laptop', tipo: 'link', url: '/computers' },
+            { nombre: 'Monitores', icono: 'bi-display', tipo: 'link', url: '/monitores' },
+            { nombre: 'Programas', icono: 'bi-file-earmark-code', tipo: 'link', url: '/programas' },
+            { nombre: 'Network Devices', icono: 'bi-router', tipo: 'link', url: '/network-devices' },
+            { nombre: 'Peripherals', icono: 'bi-usb-drive', tipo: 'link', url: '/peripherals' },
+            { nombre: 'Printers', icono: 'bi-printer', tipo: 'link', url: '/printers' },
+            { nombre: 'Consumibles', icono: 'bi-currency-dollar', tipo: 'link', url: '/consumibles' },
+            { nombre: 'Phones', icono: 'bi-phone', tipo: 'link', url: '/phones' },
+            { nombre: 'Racks', icono: 'bi-hdd', tipo: 'link', url: '/racks' },
+            { nombre: 'Enclosures', icono: 'bi-house-door', tipo: 'link', url: '/enclosures' },
+            { nombre: 'PDUs', icono: 'bi-plug', tipo: 'link', url: '/pdus' },
+            { nombre: 'Passive Devices', icono: 'bi-toggle-off', tipo: 'link', url: '/passive-devices' },
+            { nombre: 'Cables', icono: 'bi-plug', tipo: 'link', url: '/cables' },
+            { nombre: 'Tarjetas SIM', icono: 'bi-sim', tipo: 'link', url: '/tarjetas-sim' },
+            { nombre: 'Global', icono: 'bi-globe', tipo: 'link', url: '/global' }
         ]
-        
     },
     { 
         nombre: 'Tickets', 
@@ -41,7 +37,7 @@ export const menuItems = [
         nombre: 'Gestión Usuarios', 
         icono: 'bi-person-gear',
         tipo: 'link', 
-        url: '/informes' 
+        url: '/gestion-usuarios' 
     },
     { 
         nombre: 'Informes', 

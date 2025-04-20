@@ -37,11 +37,14 @@ const FloatingMenu = () => {
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    border: 'none',
+                    outline: 'none',
+                    boxShadow: 'none',
                 }}
                 onClick={toggleMenu}
             >
-                <i className="bi bi-list text-white fs-1"></i>
+                <i className="bi bi-house-gear text-white fs-2"></i>
             </button>
 
             {/* Modal que actúa como menú lateral */}
@@ -86,7 +89,8 @@ const FloatingMenu = () => {
                             <div className="row justify-content-center flex-wrap">
                                 {selectedItem.subItems.map((subItem, index) => (
                                     <div className="col-4 justify-content-center align-items-center m-1 p-1" key={index}>
-                                        <button className="btn w-100 d-flex flex-column align-items-center justify-content-center">
+                                        <button className="btn w-100 d-flex flex-column align-items-center justify-content-center"
+                                        onClick={() => handleMenuItemClick(subItem)}>
                                             <i className={`bi ${subItem.icono} fs-4 mb-1`}></i>
                                             <span>{subItem.nombre}</span>
                                         </button>

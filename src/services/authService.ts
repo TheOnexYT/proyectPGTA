@@ -7,7 +7,6 @@ const users = [
 
 
 export const loginUser = async (email: string, password: string) => {
-
     if(!email || !password) {
         throw new Error('Email y contraseña son requeridos');
     }
