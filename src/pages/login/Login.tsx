@@ -32,7 +32,7 @@ const Login: React.FC = () => {
 
         <form onSubmit={onSubmit}>
           <div className="form-group mb-4">
-            <label className="form-label">Usuario</label>
+            <label className="form-label">Acceso</label>
             <input
               type="text"
               className="form-control"
