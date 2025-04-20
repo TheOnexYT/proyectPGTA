@@ -2,7 +2,8 @@
 const users = [
     { email: 'juanse@gmail.com', password: '1234', name: 'Juanse' },
     { email: 'maria@test.com', password: 'abcd', name: 'María' },
-    { email: 'test@test.com', password: '1234', name: 'Test User' }
+    { email: 'test@test.com', password: '1234', name: 'Test User' },
+    { email: '1', password: '1', name: 'Test User' }
   ];
 
 
