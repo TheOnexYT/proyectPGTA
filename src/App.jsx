@@ -4,6 +4,7 @@ import { Home } from './pages/Home';
 import ProtectedRoute from './components/ProtectedRoute';
 import Computers from './pages/inventario/computers/Computers';
 import Monitores from './pages/inventario/monitores/Monitores';
+import Tickets from './pages/tickets/Tickets';
 
 
 const App = () => {
@@ -28,6 +29,12 @@ const App = () => {
           <Route path="/monitores"
             element={
               <Monitores />
+            }
+          />
+
+          <Route path="/tickets"
+            element={
+              <Tickets/>
             }
           />
         </Routes>
