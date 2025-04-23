@@ -7,27 +7,30 @@ import TicketModal from './TicketModal';
 import TicketDetailModal from '../../components/TicketDetailModal';
 import TicketCard from '../../components/TicketCard';
 import { useTickets } from './useTickets';
-import { Ticket } from '../../types/Ticket';
 
-const Tickets: React.FC = () => {
+const Tickets = () => {
   const navigate = useNavigate();
   const { tickets, agregarTicket, eliminarTicket, editarTicket } = useTickets();
 
   const [showModal, setShowModal] = useState(false);
-  const [ticketEnEdicion, setTicketEnEdicion] = useState<Ticket | null>(null);
-  const [detalleTicket, setDetalleTicket] = useState<Ticket | null>(null);
+  const [ticketEnEdicion, setTicketEnEdicion] = useState(null);
+  const [detalleTicket, setDetalleTicket] = useState(null);
 
   const handleCrear = () => {
     setTicketEnEdicion(null);
     setShowModal(true);
   };
 
-  const handleEditar = (ticket: Ticket) => {
+  const handleEditar = (ticket) => {
     setTicketEnEdicion(ticket);
     setShowModal(true);
   };
 
-  const handleGuardar = (ticket: Omit<Ticket, '_id'>) => {
+  const handleGuardar = (ticket) => {
+    if (ticketEnEdicion && ticketEnEdicion._id === ticket._id) {
+      return; // Si el ticket editado no ha cambiado, no hacemos nada.
+    }
+
     if (ticketEnEdicion) {
       editarTicket(ticketEnEdicion._id, ticket);
     } else {
@@ -43,9 +46,12 @@ const Tickets: React.FC = () => {
         <button
           className="btn btn-outline-secondary d-flex align-items-center gap-2"
           onClick={() => {
+            // Fallback si no hay historial
             if (window.history.length > 2) {
               navigate(-1);
-            } 
+            } else {
+              navigate('/');
+            }
           }}
         >
           <i className="bi bi-arrow-left"></i> Volver

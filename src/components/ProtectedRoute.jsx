@@ -1,12 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { useAuthStore } from '../stores/useAuthStore';
-import { ReactNode } from 'react';
 
-type Props = {
-  children: ReactNode;
-};
-
-const ProtectedRoute = ({ children }: Props) => {
+const ProtectedRoute = ({ children }) => {
   const user = useAuthStore((state) => state.user);
 
   if (!user) {

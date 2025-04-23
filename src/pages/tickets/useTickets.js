@@ -1,28 +1,27 @@
 import { useState } from 'react';
-import { Ticket } from '../../types/Ticket'; // ajustá el path si cambia
 
 export const useTickets = () => {
-  const [tickets, setTickets] = useState<Ticket[]>([]);
+  const [tickets, setTickets] = useState([]);
 
-  const agregarTicket = (ticket: Omit<Ticket, '_id'>) => {
-    const newTicket: Ticket = {
+  const agregarTicket = (ticket) => {
+    const newTicket = {
       _id: crypto.randomUUID(), // o Date.now().toString() si querés algo simple
       ...ticket,
     };
     setTickets((prev) => [...prev, newTicket]);
   };
 
-  const eliminarTicket = (id: string) => {
+  const eliminarTicket = (id) => {
     setTickets((prev) => prev.filter((ticket) => ticket._id !== id));
   };
 
-  const editarTicket = (id: string, data: Omit<Ticket, '_id'>) => {
+  const editarTicket = (id, data) => {
     setTickets((prev) =>
       prev.map((t) => (t._id === id ? { _id: id, ...data } : t))
     );
   };
 
-  const getEstadoColor = (estado: string): string => {
+  const getEstadoColor = (estado) => {
     switch (estado) {
       case 'nuevo':
         return '#4CAF50'; // verde
@@ -40,7 +39,6 @@ export const useTickets = () => {
         return '#2196F3'; // azul default
     }
   };
-  
 
-  return { tickets, agregarTicket, eliminarTicket,editarTicket, getEstadoColor };
+  return { tickets, agregarTicket, eliminarTicket, editarTicket, getEstadoColor };
 };

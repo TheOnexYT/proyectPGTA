@@ -1,17 +1,9 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
-import { Ticket } from '../../types/Ticket';
 import { getEstadoColor } from '../../utils/getEstadoColor';
 
-interface TicketModalProps {
-  show: boolean;
-  onClose: () => void;
-  onSave: (ticket: Omit<Ticket, '_id'>) => void;
-  ticket?: Ticket | null; // <- ESTA línea es la que faltaba
-}
-
-const TicketModal: React.FC<TicketModalProps> = ({ show, onClose, onSave }) => {
-  const [form, setForm] = useState<Omit<Ticket, '_id'>>({
+const TicketModal = ({ show, onClose, onSave, ticket }) => {
+  const [form, setForm] = useState({
     usuario: '',
     tipo: 'queja',
     descripcion: '',
@@ -19,9 +11,7 @@ const TicketModal: React.FC<TicketModalProps> = ({ show, onClose, onSave }) => {
     fechaCreacion: new Date().toISOString(),
   });
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
