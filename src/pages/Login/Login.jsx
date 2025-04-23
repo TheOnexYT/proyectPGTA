@@ -4,13 +4,13 @@ import logo from "../../assets/logo.png";
 
 import './Login.css';
 
-const Login: React.FC = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [remember, setRemember] = useState(false);
   const { handleLogin } = useAuth();
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     handleLogin(email, password);
   };
@@ -75,8 +75,6 @@ const Login: React.FC = () => {
           </button>
 
         </form>
-
-
       </div>
 
       {/* Mensaje final con salto de línea */}
