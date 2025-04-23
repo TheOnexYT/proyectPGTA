@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { useMenuStore } from '../stores/menuStore';
 import { menuItems } from '../utilities/maps/itemsModalMenuHome';
+import { useNavigate } from 'react-router-dom';
 
 const FloatingMenu = () => {
     const { isOpen, toggleMenu } = useMenuStore();
 
     const [showSubMenu, setShowSubMenu] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
-
+    const navigate = useNavigate();
     const handleMenuItemClick = (item) => {
         if (item.tipo === 'link') {
-            window.location.href = item.url;
+            navigate(item.url);
         } else if (item.tipo === 'modal') {
             setSelectedItem(item);
             setShowSubMenu(true);
