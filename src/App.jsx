@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import { Home } from './pages/Home';
 import ProtectedRoute from './components/ProtectedRoute';
-import Computers from './pages/inventario/computers/Computers';
+import Computers from './pages/inventario/Computers/Computers';
 import Monitores from './pages/inventario/monitores/Monitores';
 import Tickets from './pages/tickets/Tickets';
 
