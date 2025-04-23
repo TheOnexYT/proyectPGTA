@@ -1,14 +1,7 @@
 import React from 'react';
 import { Modal, Box, Typography } from '@mui/material';
-import { Ticket } from '../types/Ticket';
 
-interface Props {
-  ticket: Ticket | null;
-  open: boolean;
-  onClose: () => void;
-}
-
-const TicketDetailModal: React.FC<Props> = ({ ticket, open, onClose }) => {
+const TicketDetailModal = ({ ticket, open, onClose }) => {
   if (!ticket) return null;
 
   return (

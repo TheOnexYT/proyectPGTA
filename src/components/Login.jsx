@@ -1,10 +1,9 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     // Aquí iría tu lógica de login real
     navigate('/dashboard');
@@ -31,3 +30,4 @@ const Login = () => {
 };
 
 export default Login;
+

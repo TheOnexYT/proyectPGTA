@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {
   Card,
   CardContent,
@@ -9,17 +9,9 @@ import {
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import { Ticket } from '../types/Ticket';
-import { getEstadoColor } from '../utils/getEstadoColor'; // asegurate que el path sea correcto
+import { getEstadoColor } from '../utils/getEstadoColor'; // asegúrate que el path sea correcto
 
-interface Props {
-  ticket: Ticket;
-  onView: (ticket: Ticket) => void;
-  onEdit: (ticket: Ticket) => void;
-  onDelete: (id: string) => void;
-}
-
-const TicketCard: React.FC<Props> = ({ ticket, onView, onEdit, onDelete }) => {
+const TicketCard = ({ ticket, onView, onEdit, onDelete }) => {
   const colorEstado = getEstadoColor(ticket.estado);
 
   return (
